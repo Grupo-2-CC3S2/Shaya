@@ -7,7 +7,7 @@
 
 .div-meetings{
     padding: 14px;
-    background-image: url('../images/meeting-bg.jpg');
+    /*background-image: url('../images/meeting-bg.jpg');*/
     background-size: 130%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-repeat: no-repeat;
@@ -26,3 +26,6 @@
     color: rgb(255, 0, 0);
     
 }
+
+
+/*Chat bot example*/
