@@ -1,0 +1,28 @@
+.modulo{
+    padding: 14px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+}
+
+.div-meetings{
+    padding: 14px;
+    background-image: url('../images/meeting-bg.jpg');
+    background-size: 130%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+}
+
+.btn-plus{
+    border-radius: 60px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: left;
+}
+
+.sub-tit{
+    color: rgb(255, 0, 0);
+    
+}
