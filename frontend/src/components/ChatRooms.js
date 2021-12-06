@@ -13,32 +13,7 @@ import {BsPlus, BsLink, BsMic, BsStopFill, BsArrowCounterclockwise } from "react
 
 function ChatRooms(){
 
-    const { transcript, resetTranscript } = useSpeechRecognition();
-  const [isListening, setIsListening] = useState(false);
-  const microphoneRef = useRef(null);
-  if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-    return (
-      <div className="mircophone-container">
-        Browser is not Support Speech Recognition.
-      </div>
-    );
-  }
-  const handleListing = () => {
-    setIsListening(true);
-    microphoneRef.current.classList.add("listening");
-    SpeechRecognition.startListening({
-      continuous: true,
-    });
-  };
-  const stopHandle = () => {
-    setIsListening(false);
-    microphoneRef.current.classList.remove("listening");
-    SpeechRecognition.stopListening();
-  };
-  const handleReset = () => {
-    stopHandle();
-    resetTranscript();
-  };
+    
 
     return(
         <div className='container'>
