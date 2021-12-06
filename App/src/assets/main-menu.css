@@ -1,0 +1,43 @@
+.top-bar{
+    background-color: #000000;
+    height: 70px;
+}
+
+.main-page{
+    /*background-color: #0b003d;*/
+    background-image: url("opened-book.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center-all{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+body{
+    background-color: #a30000;
+}
+
+.logo_header{
+    width:70px;
+    height:auto;
+}
+
+.modal-login2{
+    background-color:#838383;
+}
+
+.modal-login{
+    background-color:#00054b;
+}
+
+.info-imgs{
+    width: 500px
+}
+
+.modulo-login{
+    color: #ffffff;
+}
