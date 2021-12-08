@@ -24,7 +24,7 @@ class UserView extends Component {
 
   render(){
     return(
-      <div className='cointainer-fluid'>
+      <div className='cointainer'>
         <header>
           <Navbar bg="dark" expand="lg" variant="dark">
             <Container fluid>

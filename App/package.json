@@ -31,6 +31,7 @@
     "nodemon": "^2.0.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.6.4",
+    "react-canvas-draw": "^1.2.1",
     "react-css-grid": "^2.0.0-0",
     "react-dom": "^16.13.1",
     "react-flexbox-grid": "^2.1.2",
