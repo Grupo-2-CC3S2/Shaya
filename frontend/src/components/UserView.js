@@ -11,6 +11,7 @@ import {Component} from 'react';
 import Home from './Home';
 import Profile from './Profile';
 import ChatRooms from './ChatRooms';
+import Pizarra from './Pizarra';
 
 import {
   BrowserRouter as Router,
@@ -37,26 +38,20 @@ class UserView extends Component {
                 >
                   <Nav.Link href="/">Inicio</Nav.Link>
                   <Nav.Link href="/Salas">Salas</Nav.Link>
-                  <NavDropdown title="Link" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+                  <NavDropdown title="Iniciar" id="navbarScrollingDropdown">
+                    <NavDropdown.Item href="/Pizarra">Pizarra</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">Chat bot</NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link href="#" disabled>
-                    Link
-                  </Nav.Link>
                 </Nav>
                 <Form className="d-flex">
                   <FormControl
                     type="search"
-                    placeholder="Search"
+                    placeholder="Buscar ejercicios"
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-success">Search</Button>
+                  <Button variant="outline-success">Buscar</Button>
                 </Form>
               </Navbar.Collapse>
             </Container>
@@ -73,6 +68,7 @@ class UserView extends Component {
                     <Route path="/" element={<Home />} />
                     <Route path="/Profile" element={<Profile />} />
                     <Route path="/Salas" element={<ChatRooms />}></Route>
+                    <Route path="/Pizarra" element={<Pizarra />}></Route>
                 </Routes>
               </div>
             </Router>
