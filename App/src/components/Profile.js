@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Component from 'react';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -10,6 +10,8 @@ import '../assets/css/Perfil.css'
 const axios = require('axios').default;
 
 function Profile(props){
+
+  const [dataUser, setDataUser] = useState({userdata: {}});
   
 
   const obtenerDatosDelUsuario = () => {
@@ -20,12 +22,17 @@ function Profile(props){
         data: {},
         //headers: { "Content-Type": "multipart/form-data", 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWI4NjExZmYzMTQ1NzVjNzZkOTg2NSIsImlhdCI6MTYyNjE0ODkzNywiZXhwIjoxNjI2MjM1MzM3fQ.YvHD8LJlcmADp-MWuGfTIcaAk8ak73G6qZgX-6Fpa30'},
         //x-access-token
-        headers: { "Content-Type": "application/json", 'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWI4NjExZmYzMTQ1NzVjNzZkOTg2NSIsImlhdCI6MTYzODk4MDY5MiwiZXhwIjoxNjM5MDY3MDkyfQ.6lWoK9--CAA7YsYccqaxGDZdY4mv1YACJIOyBTva8wc"/*window.localStorage.getItem("token")*/},
+        headers: { "Content-Type": "application/json", 'x-access-token': window.localStorage.getItem("token")},
       })
         .then((response) => {
           //handle success
-          console.log("response",response);
-          //this.setState({ session: true, userData: response.data })
+          dataUser.userdata = response.data;
+
+          setDataUser({
+            ...dataUser
+          });
+          console.log("user info:", dataUser.userdata)
+         //this.setState({ session: true, userData: response.data })
         })
         .catch((e) => {
           //handle error
@@ -48,7 +55,6 @@ function Profile(props){
   }, []);
 
 
-
         return (
             <>
                 <div className='container'>
@@ -59,11 +65,11 @@ function Profile(props){
                             <h3>ID de Usuario:</h3>
                         </div>
                         <div className='col-md-6'>
-                            <h3>Usuario:</h3>
-                            <h3>Nombre:</h3>
-                            <h3>Apellido:</h3>
-                            <h3>Correo:</h3>
-                            <h3>Fecha de creación:</h3>
+                            <h3>Usuario: {dataUser.userdata.username} </h3>
+                            <h3>Nombre: {dataUser.userdata.nombres}</h3>
+                            <h3>Apellido: {dataUser.userdata.apellidos}</h3>
+                            <h3>Correo: {dataUser.userdata.email}</h3>
+                            <h3>Fecha de creación: {dataUser.userdata.createdAt}</h3>
                             <button className='btn btn-danger'>Editar</button>
                         </div>
                         <div className='col-md-12 my-4'><hr></hr></div>
