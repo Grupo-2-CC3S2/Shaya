@@ -15,11 +15,11 @@ class Home extends Component {
 
 	join = () => {
 		if (this.state.url !== "") {
-			var url = this.state.url.split("/")
-			window.location.href = `/${url[url.length-1]}`
+			var url = this.state.url.split("/mainHome/Home/")
+			window.location.href = `/mainHome/Home:${url[url.length-1]}`
 		} else {
 			var url = Math.random().toString(36).substring(2, 7)
-			window.location.href = `/${url}`
+			window.location.href = `/mainHome/Home:${url}`
 		}
 	}
 
@@ -34,8 +34,8 @@ class Home extends Component {
 				</div>
 				
 				<div>
-					<h1 style={{ fontSize: "45px" }}>Video Meeting</h1>
-					<p style={{ fontWeight: "200" }}>Video conference website that lets you stay in touch with all your friends.</p>
+					<h1 style={{ fontSize: "45px" }}>Shaya</h1>
+					<p style={{ fontWeight: "200" }}>Video conferencia para los usuarios.</p>
 				</div>
 
 				<div style={{

@@ -14,6 +14,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import ModalUnstyled from '@mui/core/ModalUnstyled';
 import { useState } from 'react';
 import React,{Component} from 'react'
+import SimpleForm from './components/SimpleForm';
 
 class App extends Component {
 
@@ -21,7 +22,7 @@ class App extends Component {
   render() {
   return (
     <div>
-      <Login/>
+      <SimpleForm/>
     </div>
   );
   }
