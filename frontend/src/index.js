@@ -4,12 +4,13 @@ import './index.css';
 import App from './App';
 import Login from './components/Login'
 import UserView from './components/UserView'
-
+import { ThemeProvider } from 'styled-components';
 import reportWebVitals from './reportWebVitals';
+import SimpleForm from './components/SimpleForm';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserView/>
+    <SimpleForm/>
   </React.StrictMode>,
   document.getElementById('root')
 );

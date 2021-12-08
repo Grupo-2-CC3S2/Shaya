@@ -41,9 +41,9 @@ class UserView extends Component {
                   <NavDropdown title="Iniciar" id="navbarScrollingDropdown">
                     <NavDropdown.Item href="/mainHome/Pizarra">Pizarra</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action4">Chat bot</NavDropdown.Item>
+                    <NavDropdown.Item href="/mainHome/SimpleForm">Chat bot</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action4">Reunión</NavDropdown.Item>
+                    <NavDropdown.Item href="/mainHome/Home">Reunión</NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
                 {/*<Form className="d-flex">
