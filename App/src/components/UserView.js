@@ -46,7 +46,7 @@ class UserView extends Component {
                     <NavDropdown.Item href="#action4">Reunión</NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
-                <Form className="d-flex">
+                {/*<Form className="d-flex">
                   <FormControl
                     type="search"
                     placeholder="Buscar ejercicios"
@@ -54,7 +54,7 @@ class UserView extends Component {
                     aria-label="Search"
                   />
                   <Button variant="outline-success">Buscar</Button>
-                </Form>
+                </Form>*/}
               </Navbar.Collapse>
             </Container>
           </Navbar>
