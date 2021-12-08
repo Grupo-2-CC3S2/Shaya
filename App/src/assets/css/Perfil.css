@@ -1,35 +1,18 @@
-/*pizarras*/
-
-.board-img{
-    filter: blur(3px);
-}
-
-.headInfo{
-    font-style: italic;
-    font-size: 55px;
- }
-
-#aboutYou{
-    font-style: oblique;
-}
 
 #profilePict{
         height:200px;
         width:auto;
+        text-align:right;
         /*border-radius:150px;*/
  }
 
- .profile{
-    /*tamaño de fuente para el perfil de*/
-     font-size: 20px;
+.peronal-info{
+     text-align: left;
  }
 
- .cardStyle{
-    background: white;
-    border-radius: 25px;
-    box-shadow: 5px 3px 30px gray;
- }
-
- .grayText{
-     color: gray;
- }
+.board-img{
+    max-width: 700px;
+    min-width: 100px;
+    height: auto;
+    filter: blur(6px);
+}
