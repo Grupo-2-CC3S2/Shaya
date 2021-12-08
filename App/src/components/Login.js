@@ -2,11 +2,6 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/main-menu.css'
 
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-
 import {Component} from 'react'
 
 class Login extends Component{
@@ -30,24 +25,14 @@ class Login extends Component{
             {this.state.show_login? 
             <div className='row'>
                 <div className='col-md-12 my-4'>
-                    <TextField
-                    required
-                    id="outlined-required"
-                    label="Usuario"
-                    />
+                    <input></input>
                 </div>
                 <div className='col-md-12'>
-                    <TextField
-                    required
-                    id="outlined-password-input"
-                    label="Contraseña"
-                    type="password"
-                    autoComplete="current-password"
-                    />
+                    <input></input>
                 </div>
                 
                 <div className='col-md-12 my-4'>
-                    <button className='btn btn-success float-center'>Iniciar sesión</button>
+                    <a href='/mainHome' className='btn btn-success float-center'>Iniciar sesión</a>
                 </div>
                 <div className='col-md-12 my-2'>
                     <button onClick={this.show_access} className='btn btn-danger float-center'>No tengo cuenta</button>
@@ -59,56 +44,26 @@ class Login extends Component{
             <button onClick={this.show_access} className=' btn btn-light'>Volver</button>
 
                 <div className='col-md-12 my-2'>
-                    <TextField
-                    required
-                    id="outlined-required"
-                    label="Nombre"
-                    />
+                    <input></input>
                 </div>
                 <div className='col-md-12 my-2'>
-                    <TextField
-                    required
-                    id="outlined-required"
-                    label="Apellido"
-                    />
+                    <input></input>
                 </div>
 
                 <div className='col-md-12 my-2'>
-                    <TextField
-                    required
-                    id="outlined-required"
-                    label="Usuario"
-                    />
+                    <input></input>
                 </div>
 
                 <div className='col-md-12 my-2'>
-                    <TextField
-                    required
-                    id="outlined-password-input"
-                    label="Correo"
-                    type="email"
-                    autoComplete="current-password"
-                    />
+                    <input></input>
                 </div>
 
                 <div className='col-md-12 my-2'>
-                    <TextField
-                    required
-                    id="outlined-password-input"
-                    label="Contraseña"
-                    type="password"
-                    autoComplete="current-password"
-                    />
+                    <input></input>
                 </div>
                 
                 <div className='col-md-12 my-2'>
-                    <TextField
-                    required
-                    id="outlined-password-input"
-                    label="Confirmar contraseña"
-                    type="password"
-                    autoComplete="current-password"
-                    />
+                    <input></input>
                 </div>
 
                 <div className='col-md-12 my-4'>

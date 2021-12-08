@@ -10,14 +10,15 @@ import {Component} from 'react';
 
 import Home from './Home';
 import Profile from './Profile';
-import ChatRooms from './ChatRooms';
+//import ChatRooms from './ChatRooms';
+import Pizarra from './Pizarra';
 
-import {
+/*import {
   BrowserRouter as Router,
   Route,
   Routes,
   Link,
-} from "react-router-dom";
+} from "react-router-dom";*/
 
 class UserView extends Component {
 
@@ -27,7 +28,7 @@ class UserView extends Component {
         <header>
           <Navbar bg="dark" expand="lg" variant="dark">
             <Container fluid>
-              <Navbar.Brand href="/Profile">Mi Perfil</Navbar.Brand>
+              <Navbar.Brand href="/mainHome/Perfil">Mi Perfil</Navbar.Brand>
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -37,26 +38,22 @@ class UserView extends Component {
                 >
                   <Nav.Link href="/">Inicio</Nav.Link>
                   <Nav.Link href="/Salas">Salas</Nav.Link>
-                  <NavDropdown title="Link" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+                  <NavDropdown title="Iniciar" id="navbarScrollingDropdown">
+                    <NavDropdown.Item href="/mainHome/Pizarra">Pizarra</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">Chat bot</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action4">Reunión</NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link href="#" disabled>
-                    Link
-                  </Nav.Link>
                 </Nav>
                 <Form className="d-flex">
                   <FormControl
                     type="search"
-                    placeholder="Search"
+                    placeholder="Buscar ejercicios"
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-success">Search</Button>
+                  <Button variant="outline-success">Buscar</Button>
                 </Form>
               </Navbar.Collapse>
             </Container>
@@ -66,16 +63,17 @@ class UserView extends Component {
           <div>
            
 
-            <Router>
+            {/*<Router>
               
               <div className="App">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/Profile" element={<Profile />} />
                     <Route path="/Salas" element={<ChatRooms />}></Route>
+                    <Route path="/Pizarra" element={<Pizarra />}></Route>
                 </Routes>
               </div>
-            </Router>
+            </Router>*/}
           </div>
 
         </body>

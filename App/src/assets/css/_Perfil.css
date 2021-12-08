@@ -1,0 +1,29 @@
+.headInfo{
+    font-style: italic;
+    font-size: 55px;
+ }
+
+#aboutYou{
+    font-style: oblique;
+}
+
+#profilePict{
+        width:200px;
+        height:200px;
+        border-radius:150px;
+ }
+
+ .profile{
+    /*tamaño de fuente para el perfil de*/
+     font-size: 20px;
+ }
+
+ .cardStyle{
+    background: white;
+    border-radius: 25px;
+    box-shadow: 5px 3px 30px gray;
+ }
+
+ .grayText{
+     color: gray;
+ }
