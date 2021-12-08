@@ -7,7 +7,48 @@ import Carousel from 'react-bootstrap/Carousel';
 import imgPerfil from './../profile_photos/perfil.png'
 import '../assets/css/Perfil.css'
 
+const axios = require('axios').default;
+
 function Profile(props){
+  
+
+  const obtenerDatosDelUsuario = () => {
+
+    axios({
+        method: "get",
+        url: "http://localhost:4001/api/users/profile",
+        data: {},
+        //headers: { "Content-Type": "multipart/form-data", 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWI4NjExZmYzMTQ1NzVjNzZkOTg2NSIsImlhdCI6MTYyNjE0ODkzNywiZXhwIjoxNjI2MjM1MzM3fQ.YvHD8LJlcmADp-MWuGfTIcaAk8ak73G6qZgX-6Fpa30'},
+        //x-access-token
+        headers: { "Content-Type": "application/json", 'x-access-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWI4NjExZmYzMTQ1NzVjNzZkOTg2NSIsImlhdCI6MTYzODk4MDY5MiwiZXhwIjoxNjM5MDY3MDkyfQ.6lWoK9--CAA7YsYccqaxGDZdY4mv1YACJIOyBTva8wc"/*window.localStorage.getItem("token")*/},
+      })
+        .then((response) => {
+          //handle success
+          console.log("response",response);
+          //this.setState({ session: true, userData: response.data })
+        })
+        .catch((e) => {
+          //handle error
+          //this.setState({ session: false })
+          if (e.response) {
+            //if (e.response.status) 
+            //    this.setState({ session: false })
+            console.log("response: ",e.response.data.message);
+          }else {
+
+            console.log("Error: ",e);
+          }
+      });
+
+   
+
+  }
+  React.useEffect(() => {
+    obtenerDatosDelUsuario()
+  }, []);
+
+
+
         return (
             <>
                 <div className='container'>

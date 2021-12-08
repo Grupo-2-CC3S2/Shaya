@@ -20,7 +20,7 @@ exports.createRoles = async () => {
         nombres: 'admin',
         apellidos: 'admin',
         email: 'paskay@gmail.com', 
-        password: await Usuario.encryptPassword('apipaskay'), 
+        password: await Usuario.encryptPassword('apishaya'), 
         roles: [roleAdmin._id]
       }).save()
   }catch (error) {
