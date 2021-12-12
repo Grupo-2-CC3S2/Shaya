@@ -67,13 +67,13 @@ function Profile(props){
                         </div>
                         
                         <div className='col-md-6'>
+                            <a><img title='Cambiar foto' id='profilePict' src={imgPerfil}></img></a>
                             <h3>Usuario: {dataUser.userdata.username} </h3>
                             <h3>Nombre: {dataUser.userdata.nombres}</h3>
                             <h3>Apellido: {dataUser.userdata.apellidos}</h3>
                             <h3>Correo: {dataUser.userdata.email}</h3>
                             <h3>Fecha de creación: {dataUser.userdata.createdAt}</h3>
                             <button className='btn btn-danger'>Editar</button>
-                            <a><img title='Cambiar foto' id='profilePict' src={imgPerfil}></img></a>
                         </div>
                         <div className='col-md-12 my-4'><hr></hr></div>
                         <div className='col-md-6 board-area'>

@@ -437,8 +437,6 @@ class Video extends Component {
 		let userAgent = (navigator && (navigator.userAgent || '')).toLowerCase()
 		let vendor = (navigator && (navigator.vendor || '')).toLowerCase()
 		let matchChrome = /google inc/.test(vendor) ? userAgent.match(/(?:chrome|crios)\/(\d+)/) : null
-		// let matchFirefox = userAgent.match(/(?:firefox|fxios)\/(\d+)/)
-		// return matchChrome !== null || matchFirefox !== null
 		return matchChrome !== null
 	}
 
@@ -504,7 +502,7 @@ class Video extends Component {
 									<div key={index} style={{textAlign: "left"}}>
 										<p style={{ wordBreak: "break-all" }}><b>{item.sender}</b>: {item.data}</p>
 									</div>
-								)) : <p>No message yet</p>}
+								)) : <p>Aún no hay mensajes</p>}
 							</Modal.Body>
 							<Modal.Footer className="div-send-msg">
 								<Input placeholder="Message" value={this.state.message} onChange={e => this.handleMessage(e)} />
