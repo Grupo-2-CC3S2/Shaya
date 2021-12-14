@@ -2,6 +2,11 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/main-menu.css'
 
+import { connect } from 'react-redux';
+import { signIn } from '../store/actions/authActions'
+
+import { userActions } from '../_actions';
+
 import {Component} from 'react'
 
 const axios = require('axios').default;
@@ -17,36 +22,13 @@ class Login extends Component{
     }
 
   iniciar_sesion = () => {
-    axios({
-        method: "post",
-        url: "http://localhost:4001/api/auth/signin",
-        data: {
-          username: this.state.username,
-          password: this.state.password
-        },
-        headers: { "Content-Type": "application/json", 'Authorization': 'ayJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWI4NjExZmYzMTQ1NzVjNzZkOTg2NSIsImlhdCI6MTYyNjE0ODkzNywiZXhwIjoxNjI2MjM1MzM3fQ.YvHD8LJlcmADp-MWuGfTIcaAk8ak73G6qZgX-6Fpa30'},
-        //headers: { "Content-Type": "multipart/form-data", 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWI4NjExZmYzMTQ1NzVjNzZkOTg2NSIsImlhdCI6MTYyNjE0ODkzNywiZXhwIjoxNjI2MjM1MzM3fQ.YvHD8LJlcmADp-MWuGfTIcaAk8ak73G6qZgX-6Fpa30'},
-        //x-access-token
-        //headers: { "Content-Type": "application/json"},
-      })
-        .then((response) => {
-          //handle success
-          console.log(response);
-          if (response.data) {
-            console.log("token: ", response.data.token)
-            window.localStorage.setItem("token", response.data.token);
 
-			      window.location.href = `/mainHome/Perfil`
-            //this.obtenerDatosDelUsuario()
-          }
-        })
-        .catch((e) => {
-          //handle error
-          if (e.response) {
-            console.log("response: ", e.response.data.message);
-          }
-      });
-
+    console.log(this.props)
+    const { username, password } = this.state;
+    if (username && password) {
+        this.props.login(username, password);
+    }
+    //this.props.signIn({username: this.state.username, password: this.state.password})
   }
 
 
@@ -164,4 +146,16 @@ registrar = () => {
     }
 }
 
-export default Login
+
+function mapState(state) {
+    const { loggingIn } = state.authentication;
+    return { loggingIn };
+}
+
+const actionCreators = {
+    login: userActions.login,
+    logout: userActions.logout
+};
+
+const connectedLoginPage = connect(mapState, actionCreators)(Login);
+export { connectedLoginPage as Login };
