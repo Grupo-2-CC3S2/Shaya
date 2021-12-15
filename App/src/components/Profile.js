@@ -1,22 +1,36 @@
 import React from 'react';
 import Component from 'react';
 
+import CanvasDraw from "react-canvas-draw";
+
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
 
 import imgPerfil from './../profile_photos/perfil.png'
 import '../assets/css/Perfil.css'
 
-<<<<<<< HEAD
+
 //test variables
 var datos=['BrAsm','Bryan', 'Asmat', 'basmatf@uni.pe', '10/09/2021']
-=======
 const axios = require('axios').default;
->>>>>>> 530da7ffcd887c1fdafe22327f30c02683dfcefc
+
+//get storaged images
+function keysStorage() {
+
+    var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        values.push(keys[i]);
+    }
+
+    return values;
+}
+
 
 function Profile(props){
   
-
   const obtenerDatosDelUsuario = () => {
 
     axios({
@@ -78,6 +92,22 @@ function Profile(props){
                         <div className='col-md-6 board-area'>
                             <h3>Pizarras guardadas</h3>
                             <Carousel variant="dark">
+
+                                {
+
+                                    keysStorage().map((variant, idx) => (
+                                        <Carousel.Item>
+                                            <CanvasDraw
+                                                disabled
+                                                hideGrid
+                                                //ref={canvasDraw => (this.loadableCanvas = canvasDraw)}
+                                                saveData={localStorage.getItem(variant)}
+                                            />
+                                        </Carousel.Item>
+                                    ))
+
+                                }
+                            
                             <Carousel.Item>
                                 <img
                                 className="board-img"
@@ -90,26 +120,8 @@ function Profile(props){
                                     <button className='btn btn-success'>Ver</button>
                                 </Carousel.Caption>
                             </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                className="board-img"
-                                src="https://ideandoconsulting.com/wp-content/uploads/2018/06/shake-up-sales-meeting-og-768x402.jpg"
-                                alt="Second slide"
-                                />
-                                <Carousel.Caption>
-                                    <button className='btn btn-success'>Ver</button>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img
-                                className="board-img"
-                                src="https://ideandoconsulting.com/wp-content/uploads/2018/06/shake-up-sales-meeting-og-768x402.jpg"
-                                alt="Third slide"
-                                />
-                                <Carousel.Caption>
-                                    <button className='btn btn-success'>Ver</button>
-                                </Carousel.Caption>
-                            </Carousel.Item>
+
+                            
                             </Carousel>
                         </div>
                         <div className='col-md-6 row'>
