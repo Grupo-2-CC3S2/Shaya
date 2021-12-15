@@ -30,6 +30,7 @@ function currTime(){
 
 function allStorage() {
 
+    /*
     var values = [],
         keys = Object.keys(localStorage),
         i = keys.length;
@@ -37,8 +38,13 @@ function allStorage() {
     while ( i-- ) {
         values.push( localStorage.getItem(keys[i]) );
     }
+    */
+    let pz = JSON.parse(localStorage.getItem("pz"));
+    if (pz === null) pz = [];
+    
 
-    return values;
+    console.log("p", pz);
+    return pz;
 }
 
 //var boardComments=['Estoy dibujando', 'Este es mi nuevo comentario'];
@@ -118,13 +124,19 @@ class Pizarra extends Component{
                                 <button
                                 className='btn btn-light'
                                     onClick={() => {
-                                        //get board name
-                                        var name = document.getElementById("boardKey").value;
-                                        localStorage.setItem(
-                                        {name},
-                                        this.saveableCanvas.getSaveData()
-                                        );
-                                    }}
+                      //get board name
+                                    var name = document.getElementById("boardKey").value;
+                                    let pz = JSON.parse(localStorage.getItem("pz"));
+                                    console.log("pizarra", pz)
+                                    if (pz === null) pz = [];
+                                    pz.push({"namepz": name, "cont": this.saveableCanvas.getSaveData()})
+                                    localStorage.setItem("pz", JSON.stringify(pz))
+                                    //localStorage.setItem(
+                                      //name,
+                                      //this.saveableCanvas.getSaveData()
+                                    //);
+               
+                                   }}
                                 >Guardar</button>
                             </ButtonToolbar>
 
@@ -153,6 +165,39 @@ class Pizarra extends Component{
                             {/*<p>
                                 {allStorage()}
                             </p>*/}
+      {/*=======
+                            <input onChange={this.changeSize} type='number' value={this.state.size_pen} />
+                            <input onChange={this.setColor} id='pencil-color' type='color' />
+                            <button
+                                onClick={() => {
+                                  this.saveableCanvas.eraseAll();
+                                }}
+                            >
+                                Borrar
+                            </button>
+                            <button
+                                onClick={() => {
+                                    //get board name
+                                    var name = document.getElementById("boardKey").value;
+                                    let pz = JSON.parse(localStorage.getItem("pz"));
+                                    console.log("pizarra", pz)
+                                    if (pz === null) pz = [];
+                                    pz.push({"namepz": name, "cont": this.saveableCanvas.getSaveData()})
+                                    localStorage.setItem("pz", JSON.stringify(pz))
+                                    //localStorage.setItem(
+                                      //name,
+                                      //this.saveableCanvas.getSaveData()
+                                    //);
+                                  }}
+                            >Guardar</button>
+                            <input placeholder='key' id='boardKey'></input>
+                            {<p>
+                                {allStorage().map((pizarra, i) => {
+                                  return <div key = {i}>Nombre: {pizarra.namepz}</div>
+                                })}
+                            </p>}
+>>>>>>> pizarra
+*/}
                         </div>
                         <div className='col-11'><hr /></div>
                         <div className='col-10'>
