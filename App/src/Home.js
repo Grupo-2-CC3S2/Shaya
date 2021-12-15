@@ -26,15 +26,11 @@ class Home extends Component {
 	render() {
 		return (
 			<div className="container2">
-				<div style={{fontSize: "14px", background: "white", width: "10%", textAlign: "center", margin: "auto", marginBottom: "10px"}}>
-					<IconButton style={{color: "black"}} onClick={() => window.location.href="https://github.com/0x5eba/Video-Meeting"}>
-						<GitHubIcon />
-					</IconButton>
-          <img src = {"icon.png"}></img>
+				<div >
+          <img style = {{ margin: "30px auto", height: "200px", width: "200px"}} src = {"https://raw.githubusercontent.com/Grupo-2-CC3S2/Shaya/main/App/src/profile_photos/logo.png"}></img>
 				</div>
 				
 				<div>
-					<h1 style={{ fontSize: "45px" }}>Shaya</h1>
 					<p style={{ fontWeight: "200" }}>Video conferencia para los usuarios.</p>
 				</div>
 
@@ -42,9 +38,9 @@ class Home extends Component {
 					background: "white", width: "30%", height: "auto", padding: "20px", minWidth: "400px",
 					textAlign: "center", margin: "auto", marginTop: "100px"
 				}}>
-					<p style={{ margin: 0, fontWeight: "bold", paddingRight: "50px" }}>Start or join a meeting</p>
+					<p style={{ margin: 0, fontWeight: "bold", paddingRight: "50px" }}>Crea o únete a una reunión</p>
 					<Input placeholder="URL" onChange={e => this.handleChange(e)} />
-					<Button variant="contained" color="primary" onClick={this.join} style={{ margin: "20px" }}>Go</Button>
+					<Button variant="contained" color="primary" onClick={this.join} style={{ margin: "20px" }}>Ir</Button>
 				</div>
 			</div>
 		)

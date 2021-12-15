@@ -52,7 +52,8 @@ class Video extends Component {
 			message: "",
 			newmessages: 0,
 			askForUsername: true,
-			username: faker.internet.userName(),
+			//username: faker.internet.userName(),
+			username: "Brayan Carlos Ronald",
 		}
 		connections = {}
 
@@ -455,9 +456,9 @@ class Video extends Component {
 					<div>
 						<div style={{background: "white", width: "30%", height: "auto", padding: "20px", minWidth: "400px",
 								textAlign: "center", margin: "auto", marginTop: "50px", justifyContent: "center"}}>
-							<p style={{ margin: 0, fontWeight: "bold", paddingRight: "50px" }}>Set your username</p>
+							<p style={{ margin: 0, fontWeight: "bold", paddingRight: "50px" }}>Coloca tu nombre</p>
 							<Input placeholder="Username" value={this.state.username} onChange={e => this.handleUsername(e)} />
-							<Button variant="contained" color="primary" onClick={this.connect} style={{ margin: "20px" }}>Connect</Button>
+							<Button variant="contained" color="primary" onClick={this.connect} style={{ margin: "20px" }}>INICIAR</Button>
 						</div>
 
 						<div style={{ justifyContent: "center", textAlign: "center", paddingTop: "40px" }}>
@@ -515,7 +516,7 @@ class Video extends Component {
 								<Input value={window.location.href} disable="true"></Input>
 								<Button style={{backgroundColor: "#3f51b5",color: "whitesmoke",marginLeft: "20px",
 									marginTop: "10px",width: "120px",fontSize: "10px"
-								}} onClick={this.copyUrl}>Copy invite link</Button>
+								}} onClick={this.copyUrl}>Copiar link</Button>
 							</div>
 
 							<Row id="main" className="flex-container" style={{ margin: 0, padding: 0 }}>
