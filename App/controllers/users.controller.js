@@ -94,6 +94,11 @@ exports.updateUser = async (req, res, next) => {
 exports.deleteUser = async (req, res, next) => {
     const { username } = req.body;
     let result = await Usuario.find({"username": username});
+    if (result) {
+      Usuario.find({ "username":username }).remove().exec();
+      res.end('Deleting user');
+    } else {
     console.log(result);
-    res.end('Deleting user');
+    res.end('User not found');
+    }
 }

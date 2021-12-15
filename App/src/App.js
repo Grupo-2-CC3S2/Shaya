@@ -1,4 +1,15 @@
-import React, { Component } from 'react'
+import React from "react";
+import { Routes } from "./components/router";
+
+function App() {
+  return (
+    <Routes />
+  );
+}
+
+export default App;
+
+{/*import React, { Component } from 'react'
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -20,7 +31,6 @@ class App extends Component {
 				<Router>
 					<Switch>
 						<Route path="/" exact component={Login} />
-						{/*<Route path="/mainHome" exact component={UserView} />*/}
 						<Route path="/mainHome/Perfil" exact component={Perfil} />
 						<Route path="/mainHome/Pizarra" exact component={Pizarra} />
 						<Route path="/mainHome/Home" exact component={Home} />
@@ -34,3 +44,7 @@ class App extends Component {
 }
 
 export default App;
+*/}
+
+
+
