@@ -4,10 +4,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { createStore, applyMiddleware, compose } from 'redux'
-import rootReducer from './store/reducers/rootReducer'
 import { Provider, useSelector } from 'react-redux'
 
-import { store } from './_helpers';
+import { store } from './redux/_helpers';
 import { render } from 'react-dom';
 
 ReactDOM.render(

@@ -2,6 +2,9 @@ import { userConstants } from '../_constants';
 import { userService } from '../_services';
 import { alertActions } from './';
 import { history } from '../_helpers';
+/*
+ * ACTIONS: Para Iniciar sesión y registrar un usuario
+ * */
 
 export const userActions = {
     login,

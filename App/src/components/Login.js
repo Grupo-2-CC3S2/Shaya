@@ -3,16 +3,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/main-menu.css'
 
 import { connect } from 'react-redux';
-import { signIn } from '../store/actions/authActions'
 
-import { userActions } from '../_actions';
+import { userActions } from '../redux/_actions';
 
 import {Component} from 'react'
 
 const axios = require('axios').default;
 
 class Login extends Component{
-
 
     state = {
         show_login:true,
@@ -31,53 +29,18 @@ class Login extends Component{
     //this.props.signIn({username: this.state.username, password: this.state.password})
   }
 
+  registr = () => {
 
-registrar = () => {
-    axios({
-        method: "post",
-        url: "http://localhost:4001/api/auth/signup",
-        data: {
-          username: this.state.usernamere, 
-          nombres: this.state.nombresre, 
-          apellidos: this.state.apellidosre, 
-          email: this.state.emailre, 
-          password: this.state.passwordre 
-      
-        },
-        headers: { "Content-Type": "application/json", 'Authorization': 'ayJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWI4NjExZmYzMTQ1NzVjNzZkOTg2NSIsImlhdCI6MTYyNjE0ODkzNywiZXhwIjoxNjI2MjM1MzM3fQ.YvHD8LJlcmADp-MWuGfTIcaAk8ak73G6qZgX-6Fpa30'},
-        //headers: { "Content-Type": "multipart/form-data", 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWI4NjExZmYzMTQ1NzVjNzZkOTg2NSIsImlhdCI6MTYyNjE0ODkzNywiZXhwIjoxNjI2MjM1MzM3fQ.YvHD8LJlcmADp-MWuGfTIcaAk8ak73G6qZgX-6Fpa30'},
-        //x-access-token
-        //headers: { "Content-Type": "application/json"},
-      })
-        .then((response) => {
-          //handle success
-          console.log(response);
-          if (response.data) {
-            console.log("token: ", response.data.token)
-            window.localStorage.setItem("token", response.data.token);
-
-			      window.location.href = `/mainHome/Perfil`
-            //this.obtenerDatosDelUsuario()
-          }
-        })
-        .catch((e) => {
-          //handle error
-          if (e.response) {
-            console.log("response: ", e.response.data.message);
-          }
-      });
-
+    const { regusername, regname, regapellidos, regemail, regpassword } = this.state;
+    if (regusername && regname) {
+        this.props.register({username: regusername, nombres: regname, apellidos: regapellidos, email: regemail, password: regpassword});
+    }
   }
 
-
-
-  changeUsername = (event) => {
-    this.setState({username: event.target.value})
-  }
-
-  changePassword = (event) => {
-    this.setState({password: event.target.value})
-  }
+  handleChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
+    }
 
 
     show_access=()=>{
@@ -94,10 +57,10 @@ registrar = () => {
             {this.state.show_login? 
             <div className='row login-area'>
                 <div className='col-md-12 my-4'>
-                    <input value = {this.state.username} onChange = {this.changeUsername}  className='form-control' placeholder='Usuario' />
+                    <input name = "username" value = {this.state.username} onChange = {this.handleChange}  className='form-control' placeholder='Usuario' />
                 </div>
                 <div className='col-md-12'>
-                    <input value = {this.state.password} onChange = {this.changePassword} className='form-control' placeholder='Contraseña' type='password' />
+                    <input name = "password" value = {this.state.password} onChange = {this.handleChange} className='form-control' placeholder='Contraseña' type='password' />
                 </div>
                 
                 <div onClick = {this.iniciar_sesion} className='col-md-12 my-4'>
@@ -113,30 +76,30 @@ registrar = () => {
             <button onClick={this.show_access} className=' btn btn-danger my-2'>Volver</button>
 
                 <div className='col-md-12 my-2'>
-                    <input tye='email' className='form-control' placeholder='Correo'></input>
+                    <input name = "regemail" value = {this.state.regemail} onChange = {this.handleChange} tye='email' className='form-control' placeholder='Correo'></input>
                 </div>
                 <div className='col-md-12 my-2'>
-                    <input className='form-control' placeholder='Nombre'></input>
-                </div>
-
-                <div className='col-md-12 my-2'>
-                    <input className='form-control' placeholder='Apellidos'></input>
+                    <input name = "regname" value = {this.state.regname} onChange = {this.handleChange} className='form-control' placeholder='Nombre'></input>
                 </div>
 
                 <div className='col-md-12 my-2'>
-                    <input className='form-control' placeholder='Nombre de Usuario'></input>
+                    <input name = "regapellidos" value = {this.state.regapellidos} onChange = {this.handleChange} className='form-control' placeholder='Apellidos'></input>
                 </div>
 
                 <div className='col-md-12 my-2'>
-                    <input type='password' className='form-control' placeholder='Contraseña'></input>
+                    <input name = "regusername" value = {this.state.regusername} onChange = {this.handleChange} className='form-control' placeholder='Nombre de Usuario'></input>
+                </div>
+
+                <div className='col-md-12 my-2'>
+                    <input name = "regpassword" value = {this.state.regpassword} onChange = {this.handleChange} type='password' className='form-control' placeholder='Contraseña'></input>
                 </div>
 
                 <div className='col-md-12 my-2'>
                     <input type='password' className='form-control' placeholder='Confirmar contraseña'></input>
                 </div>
 
-                <div className='col-md-12 my-4'>
-                    <button className='btn btn-primary float-center'>Registrarme</button>
+                <div onClick = {this.registr} className='col-md-12 my-4'>
+                    <button  className='btn btn-primary float-center'>Registrarme</button>
                 </div>
             </div>:null}
         </div>
@@ -154,6 +117,7 @@ function mapState(state) {
 
 const actionCreators = {
     login: userActions.login,
+    register: userActions.register,
     logout: userActions.logout
 };
 

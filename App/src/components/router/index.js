@@ -8,9 +8,8 @@ import {
 
 
 import { connect } from 'react-redux';
-import { signIn } from '../../store/actions/authActions'
 
-import { userActions } from '../../_actions';
+import { userActions } from '../../redux/_actions';
 
 
 

@@ -2,7 +2,8 @@ import React from "react";
 import { Redirect, Route } from "react-router-dom";
 
 import { connect } from 'react-redux';
-import { userActions } from '../../_actions';
+import { userActions } from '../../redux/_actions';
+import { Login } from '../Login';
 
 
 const PrivateRoute = ({ loggedIn,component: Component, ...rest }) => {
@@ -15,8 +16,7 @@ const PrivateRoute = ({ loggedIn,component: Component, ...rest }) => {
           <Component {...props} />
         ) : (
           <>
-          <div>Not Authorized</div>
-           
+           <Redirect><Login/></Redirect>
           </>
         )
       }

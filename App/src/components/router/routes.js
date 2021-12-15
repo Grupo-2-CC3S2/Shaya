@@ -11,15 +11,10 @@ import Pizarra from '../Pizarra';
 
 import Video from '../../Video';
 import Home from '../../Home';
-
+import { HomeApp } from '../HomeApp';
 
 const routes = {
   private: [
-    {
-      path: "/",
-      name: "dashboard",
-      component: DashboardPage
-    },
     {
       path: "/mainHome/Perfil",
       name: "profile",
@@ -48,9 +43,9 @@ const routes = {
   ],
   public: [
     {
-      path: "/login",
-      name: "login",
-      component: Login
+      path: "/",
+      name: "homeApp",
+      component: HomeApp
     }
   ]
 }

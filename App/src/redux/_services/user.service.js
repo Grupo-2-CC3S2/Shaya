@@ -60,7 +60,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${serverroute}/users/register`, requestOptions).then(handleResponse);
+    return fetch(`${serverroute}/api/auth/signup`, requestOptions).then(handleResponse);
 }
 
 function update(user) {
