@@ -29,6 +29,25 @@ function keysStorage() {
     return values;
 }
 
+function allStorage() {
+
+    /*
+    var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        values.push( localStorage.getItem(keys[i]) );
+    }
+    */
+    let pz = JSON.parse(localStorage.getItem("pz"));
+    if (pz === null) pz = [];
+    
+
+    console.log("p", pz);
+    return pz;
+}
+
 
 function Profile(props){
 
@@ -99,13 +118,14 @@ function Profile(props){
 
                                 {
 
-                                    keysStorage().map((variant, idx) => (
+                                    allStorage().map((pizarra, idx) => (
                                         <Carousel.Item>
                                             <CanvasDraw
                                                 disabled
                                                 hideGrid
                                                 //ref={canvasDraw => (this.loadableCanvas = canvasDraw)}
-                                                saveData={localStorage.getItem(variant)}
+                                                //saveData={localStorage.getItem(variant)}
+                                                saveData={pizarra.cont}
                                             />
                                         </Carousel.Item>
                                     ))

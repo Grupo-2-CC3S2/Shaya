@@ -27,10 +27,10 @@ class Home extends Component {
 		return (
 			<div className="container2">
 				<div style={{fontSize: "14px", background: "white", width: "10%", textAlign: "center", margin: "auto", marginBottom: "10px"}}>
-					Source code: 
 					<IconButton style={{color: "black"}} onClick={() => window.location.href="https://github.com/0x5eba/Video-Meeting"}>
 						<GitHubIcon />
 					</IconButton>
+          <img src = {"icon.png"}></img>
 				</div>
 				
 				<div>

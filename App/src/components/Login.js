@@ -68,6 +68,7 @@ class Login extends Component{
                 </div>
                 <div className='col-md-12 my-2'>
                     <button onClick={this.show_access} className='btn btn-danger float-center w-50'>No tengo cuenta</button>
+            <div style = {{color: "blue"}}> {this.props.message}</div>
                 </div>
             </div>:null}
 
@@ -101,6 +102,8 @@ class Login extends Component{
                 <div onClick = {this.registr} className='col-md-12 my-4'>
                     <button  className='btn btn-primary float-center'>Registrarme</button>
                 </div>
+
+            <div style = {{color: "blue"}}> {this.props.message}</div>
             </div>:null}
         </div>
     </div>
@@ -112,7 +115,8 @@ class Login extends Component{
 
 function mapState(state) {
     const { loggingIn } = state.authentication;
-    return { loggingIn };
+    const { message } = state.alert;
+    return { loggingIn, message };
 }
 
 const actionCreators = {
