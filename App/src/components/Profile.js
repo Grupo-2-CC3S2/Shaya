@@ -93,7 +93,6 @@ function Profile(props){
                             <h3>Fecha de creación: {dataUser.userdata.createdAt}</h3>
                             <button className='btn btn-danger'>Editar</button>
                         </div>
-                        <div className='col-md-12 my-4'><hr></hr></div>
                         <div className='col-md-6 board-area'>
                             <h3>Pizarras guardadas</h3>
                             <Carousel variant="dark">
@@ -129,7 +128,7 @@ function Profile(props){
                             
                             </Carousel>
                         </div>
-                        <div className='col-md-6 row'>
+                        {/*<div className='col-md-6 row'>
                             <div className='col-md-12'><h3>Historial</h3></div>
                             <div className='col-md-12'>
                                 <button className='btn btn-outline-dark my-1 w-100'>Chatbot</button>
@@ -139,7 +138,7 @@ function Profile(props){
                                 <button className='btn btn-outline-dark my-1 w-100'>Reuniones</button>
                                 
                             </div>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
                 

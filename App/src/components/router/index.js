@@ -50,9 +50,7 @@ const Routes = (props) => {
                   style={{ maxHeight: '1000px' }}
                   navbarScroll
                 >
-                  <Nav.Link href="/">Inicio</Nav.Link>
       {props.loggedIn === true && (<>
-                  <Nav.Link href="/Salas">Salas</Nav.Link>
                   <NavDropdown title="Iniciar" id="navbarScrollingDropdown">
                     <NavDropdown.Item href="/mainHome/Pizarra">Pizarra</NavDropdown.Item>
                     <NavDropdown.Divider />

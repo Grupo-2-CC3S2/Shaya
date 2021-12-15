@@ -1,5 +1,7 @@
 import React from "react";
 import {Component} from "react";
+import { Row, Col, Container, Nav, Form, FormControl, Button, ButtonToolbar, ButtonGroup, InputGroup  } from 'react-bootstrap';
+
 import CanvasDraw from "react-canvas-draw";
 
 import './../assets/css/Pizarra.css'
@@ -89,7 +91,7 @@ class Pizarra extends Component{
                     <div className='col-md-12'><h1>Pizarra</h1></div>
 
                     <div ref="drawArea" onMouseDown={this.handleMouseDown} onMouseMove={this.handleMouseMove}/>
-
+                    {/*Pizarra de dibujo */}
                     <div className='col-md-8 row'>
                         <div className='col-12 my-4 div-canvas'>
                             <CanvasDraw className='my-canvas'
@@ -100,30 +102,57 @@ class Pizarra extends Component{
                                 brushColor={this.state.pencilColor}
                             />
                         </div>
+                        {/*Herramientas */}
                         <div className='draw-tools col-12'>
-                            <input onChange={this.changeSize} type='number' value={this.state.size_pen} />
-                            <input onChange={this.setColor} id='pencil-color' type='color' />
-                            <button
-                                onClick={() => {
-                                  this.saveableCanvas.eraseAll();
-                                }}
-                            >
-                                Borrar
-                            </button>
-                            <button
-                                onClick={() => {
-                                    //get board name
-                                    var name = document.getElementById("boardKey").value;
-                                    localStorage.setItem(
-                                      {name},
-                                      this.saveableCanvas.getSaveData()
-                                    );
-                                  }}
-                            >Guardar</button>
-                            <input placeholder='key' id='boardKey'></input>
-                            {<p>
+
+                    
+                            <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
+                                <ButtonGroup className="me-2" aria-label="First group">
+                                
+                                
+                                </ButtonGroup>
+                                <InputGroup>
+                                <InputGroup.Text id="btnGroupAddon">Nombre</InputGroup.Text>
+                                <input className='form-control' placeholder='key' id='boardKey'></input>
+                                </InputGroup>
+                                <button
+                                className='btn btn-light'
+                                    onClick={() => {
+                                        //get board name
+                                        var name = document.getElementById("boardKey").value;
+                                        localStorage.setItem(
+                                        {name},
+                                        this.saveableCanvas.getSaveData()
+                                        );
+                                    }}
+                                >Guardar</button>
+                            </ButtonToolbar>
+
+                            <ButtonToolbar
+                                className="justify-content-center my-4"
+                                aria-label="Toolbar with Button groups"
+                                >
+                                    <ButtonGroup aria-label="First group">
+                                    <input className='btn' onChange={this.setColor} id='pencil-color' type='color' />{' '}
+                                    <Button
+                                    className='btn btn-warning'
+                                    onClick={() => {
+                                    this.saveableCanvas.eraseAll();
+                                    }}
+                                >
+                                    Borrar
+                                </Button>{' '}
+                                </ButtonGroup>
+                                <InputGroup>
+                                <InputGroup.Text id="btnGroupAddon2">Pincel</InputGroup.Text>
+                                <input className='form-control' onChange={this.changeSize} type='number' value={this.state.size_pen} />
+                                </InputGroup>
+                            </ButtonToolbar>
+                            
+                            
+                            {/*<p>
                                 {allStorage()}
-                            </p>}
+                            </p>*/}
                         </div>
                         <div className='col-11'><hr /></div>
                         <div className='col-10'>
